@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+	xmlns:rss="http://purl.org/rss/1.0/" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+
+<foaf:Agent rdf:nodeID="idp0000"> 
+	<foaf:name>Reddit - DataIssBeautiful</foaf:name> 
+	<foaf:weblog> 
+		<foaf:Document rdf:about="https://www.reddit.com/r/dataisbeautiful/"> 
+			<dc:title>DataIsBeautiful</dc:title> 
+			<rdfs:seeAlso> 
+				<rss:channel rdf:about="https://www.reddit.com/r/dataisbeautiful.rss"> 
+					<foaf:maker rdf:nodeID="idp0000"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/2001/sw/"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/community/datavis"/> 
+				</rss:channel> 
+			</rdfs:seeAlso> 
+		</foaf:Document> 
+	</foaf:weblog> 
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/> 
+	<foaf:interest rdf:resource="http://www.w3.org/community/datavis"/> 
+</foaf:Agent> 
+
+<foaf:Agent rdf:nodeID="idp0001"> 
+	<foaf:name>Federico D'Ambrosio</foaf:name> 
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://twitter.com/"/>
+			<foaf:accountName>fedexist</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://github.com/"/>
+			<foaf:accountName>fedexist</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:weblog> 
+		<foaf:Document rdf:about="http://fedexist.github.io/"> 
+			<dc:title>Not Really Fedexist's Blog</dc:title> 
+			<rdfs:seeAlso> 
+				<rss:channel rdf:about="http://fedexist.github.io/rss"> 
+					<foaf:maker rdf:nodeID="idp0001"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/2001/sw/"/> 
+				</rss:channel> 
+			</rdfs:seeAlso> 
+		</foaf:Document> 
+	</foaf:weblog> 
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/>
+	<vcard:FN>Federico D'Ambrosio</vcard:FN>
+    <vcard:TEL>0000001</vcard:TEL>
+    <vcard:Given>Federico</vcard:Given>
+    <vcard:Family>D'Ambrosio</vcard:Family>
+</foaf:Agent>
+
+<foaf:Agent rdf:nodeID="idp0002"> 
+	<foaf:name>Edoardo Ferrante</foaf:name> 
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://twitter.com/"/>
+			<foaf:accountName>fleanend</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://github.com/"/>
+			<foaf:accountName>fleanend</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:weblog> 
+		<foaf:Document rdf:about="http://fleanend.github.io/"> 
+			<dc:title>Not Really Fleanend's Blog</dc:title> 
+			<rdfs:seeAlso> 
+				<rss:channel rdf:about="http://fleanend.github.io/rss"> 
+					<foaf:maker rdf:nodeID="idp0002"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/2001/sw/"/> 
+				</rss:channel> 
+			</rdfs:seeAlso> 
+		</foaf:Document> 
+	</foaf:weblog> 
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/> 
+    <vcard:FN>Edoardo Ferrante</vcard:FN>
+    <vcard:TEL>0000003</vcard:TEL>
+    <vcard:Given>Edoardo</vcard:Given>
+    <vcard:Family>Ferrante</vcard:Family>
+</foaf:Agent>
+
+<foaf:Agent rdf:nodeID="idp0003"> 
+	<foaf:name>Enrico Ferro</foaf:name> 
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://github.com/"/>
+			<foaf:accountName>grebbo</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:weblog> 
+		<foaf:Document rdf:about="http://grebbo.github.io/"> 
+			<dc:title>Not Really Enrico's Blog</dc:title> 
+			<rdfs:seeAlso> 
+				<rss:channel rdf:about="http://grebbo.github.io/rss"> 
+					<foaf:maker rdf:nodeID="idp0003"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/2001/sw/"/> 
+				</rss:channel> 
+			</rdfs:seeAlso> 
+		</foaf:Document> 
+	</foaf:weblog> 
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/>
+    <vcard:FN>Enrico Ferro</vcard:FN>
+    <vcard:TEL>0000002</vcard:TEL>
+    <vcard:Given>Enrico</vcard:Given>
+    <vcard:Family>Ferro</vcard:Family>	
+</foaf:Agent>
+
+<foaf:Agent rdf:nodeID="idp0004"> 
+	<foaf:name>Giulia Cagnes</foaf:name> 
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://www.facebook.com/"/>
+			<foaf:accountName>Giuli92</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/>
+	<vcard:FN>Giulia Cagnes</vcard:FN>
+    <vcard:TEL>0000004</vcard:TEL>
+    <vcard:Given>Giulia</vcard:Given>
+    <vcard:Family>Cagnes</vcard:Family>
+</foaf:Agent>
+
+<foaf:Agent rdf:nodeID="idp0005"> 
+	<foaf:name>Ciccio Pasticcio</foaf:name> 
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:holdsAccount>
+		<foaf:OnlineAccount>
+			<foaf:accountServiceHomepage rdf:resource="https://twitter.com/"/>
+			<foaf:accountName>realDonaldTrump</foaf:accountName>
+		</foaf:OnlineAccount>
+	</foaf:holdsAccount>
+	<foaf:weblog> 
+		<foaf:Document rdf:about="http://cicciopasticcio.blogspot.com/"> 
+			<dc:title>Not Really Ciccio's Blog</dc:title> 
+			<rdfs:seeAlso> 
+				<rss:channel rdf:about="http://cicciopasticcio.blogspot.com/rss"> 
+					<foaf:maker rdf:nodeID="idp0005"/> 
+					<foaf:topic rdf:resource="http://www.w3.org/2001/sw/"/> 
+				</rss:channel> 
+			</rdfs:seeAlso> 
+		</foaf:Document> 
+	</foaf:weblog> 
+	<foaf:interest rdf:resource="http://www.w3.org/2001/sw/"/>
+    <vcard:FN>Ciccio Pasticcio</vcard:FN>
+    <vcard:Given>Ciccio</vcard:Given>
+    <vcard:Family>Pasticcio</vcard:Family>
+    <vcard:TEL>1234567</vcard:TEL>
+</foaf:Agent>
+</rdf:RDF> 
+

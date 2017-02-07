@@ -26,11 +26,13 @@ import org.apache.jena.query.ResultSet ;
 import org.apache.jena.query.ResultSetFormatter ;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP ;
 
+//usa il servizio query di dbpedia per effettuare una qry
 public class ExampleDBPedia1 {
 
 	public static void main(String[] args) {
         try {
-            String queryStr = "select distinct ?Concept where {[] a ?Concept} LIMIT 10";
+        	//seleziona 20 concetti differenti tra quelli presenti
+            String queryStr = "select distinct ?Concept where {[] a ?Concept} LIMIT 20";
             Query query = QueryFactory.create(queryStr);
 
             // Remote execution.
