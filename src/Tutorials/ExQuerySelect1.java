@@ -34,10 +34,6 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.DC;
 
-/**
- * Example 1 : Execute a simple SELECT query on a model to find the DC titles
- * contained in a model.
- */
 
 public class ExQuerySelect1 {
 	static public final String NL = System.getProperty("line.separator");

@@ -33,9 +33,6 @@ import org.apache.jena.rdf.model.ModelFactory ;
 import org.apache.jena.rdf.model.Resource ;
 import org.apache.jena.vocabulary.DC ;
 
-/** Example 2 : Execute a simple SELECT query on a model
- *  to find the DC titles contained in a model. 
- *  Show how to print results twice. */
 
 public class ExQuerySelect2
 {
@@ -52,7 +49,7 @@ public class ExQuerySelect2
         
         // Query string.
         String queryString = prolog + NL +
-            "SELECT ?title WHERE {?x dc:title ?title}" ; 
+            "SELECT ?title ?description WHERE {?x dc:title ?title . ?x dc:description ?description . FILTER regex(?title, \"oo\", \"i\")}" ; 
         
         Query query = QueryFactory.create(queryString) ;
         // Print with line numbers
@@ -72,9 +69,11 @@ public class ExQuerySelect2
             // Do before first use.
             
             ResultSetRewindable rewindable = ResultSetFactory.makeRewindable(qexec.execSelect()) ;
+            System.out.println(rewindable.size());
             ResultSetFormatter.out(rewindable) ;
             rewindable.reset() ;
             ResultSetFormatter.out(rewindable) ;
+            
         }
         finally
         {
@@ -89,6 +88,7 @@ public class ExQuerySelect2
           
           Resource r1 = m.createResource("http://example.org/book#1") ;
           Resource r2 = m.createResource("http://example.org/book#2") ;
+          Resource r3 = m.createResource("http://example.org/book#3") ;
           
           r1.addProperty(DC.title, "SPARQL - the book")
             .addProperty(DC.description, "A book about SPARQL") 
@@ -99,6 +99,11 @@ public class ExQuerySelect2
             .addProperty(DC.description, "A good book about SPARQL")
             .addProperty(DC.identifier, "thatISBN")
             .addProperty(DC.type, "teaching");
+          
+          r3.addProperty(DC.title, "Another Advanced techniques for SPARQL")
+          	.addProperty(DC.description, "Another good book about SPARQL")
+          	.addProperty(DC.identifier, "thatthisISBN")
+          	.addProperty(DC.type, "teaching");
 
         return m ;
     }
