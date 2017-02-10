@@ -20,9 +20,9 @@ public class PizzaSearch {
 		OntModel myOntologyModel = ModelFactory.createOntologyModel();
 		myOntologyModel.read("pizza.owl");
 		
-		//System.out.println(myOntologyModel.toString());
+		System.out.println(myOntologyModel.toString());
 		//sembra funzionare a giudicare dal print
-		
+		/*
 		ArrayList<String> namedPizzas = new ArrayList<String>();
 		
 		String queryString = prolog + NL + prolog2 + NL
@@ -30,7 +30,7 @@ public class PizzaSearch {
 				+ "	WHERE "
 				+ " {	 [] a owl:Class:NamedPizza "
 				+ " } ";
-		
+		*/
 		//faccio la query su dbpedia e un altro dataset
 		
 		//mostro il resultset come json o xml/rdf o html
