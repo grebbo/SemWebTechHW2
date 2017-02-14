@@ -72,11 +72,16 @@ public class PizzaSearch {
     
  
         ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
-        
+        String str = "{?pizza foaf:name\"zzz\"}";
       for(String pizza:namedPizzas)
       {
     	  pizza = stripCapital(pizza);
-    	 
+    	  str += "UNION" + "{?pizza foaf:name \""+ pizza + "\"@en }";
+      }
+      
+      str += ".";
+      
+     
       queryStr = prologRdfs + NL + prologRdf + NL + "PREFIX foaf: <http://xmlns.com/foaf/0.1/>" + NL 
           + " SELECT ?label "
           + " WHERE { "
@@ -84,7 +89,7 @@ public class PizzaSearch {
           + "   SELECT ?pizza " 
           + "   WHERE {" 
           + "     ?pizza rdf:type <http://dbpedia.org/ontology/Food> ."
-          + "      ?pizza foaf:name \""+ pizza + "\"@en ."
+          + str
           + "   }}"
           + " }"  ;
       
@@ -95,11 +100,12 @@ public class PizzaSearch {
       // Set the DBpedia specific timeout.
       ((QueryEngineHTTP) qexec).addParam("timeout", "100000");
  // Execute.
+      
       rs = qexec.execSelect();
       ResultSetFormatter.out(System.out, rs, query);
       qexec.close();
       
-      }
+
       
       
     }
