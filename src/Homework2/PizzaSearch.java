@@ -69,28 +69,14 @@ public class PizzaSearch {
         
         qexec.close();
         System.out.println(namedPizzas);
-      } catch (Exception e) {
-        e.printStackTrace();
-
-    ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
-    
     
  
-      queryStr = prologRdfs + NL + "PREFIX foaf: <http://xmlns.com/foaf/0.1/>" + NL 
-          + " SELECT ?label ?wikiID " 
-          + " WHERE {" 
-          + "   ?label rdfs:label ?x ."
-          + "    ?wikiID <http://dbpedia.org/ontology/wikiPageID> ?x {"
-          + "    SELECT ?x "
-          + "    WHERE { "
-          + "      ?x a <http://dbpedia.org/ontology/Food> ."
-          + "      ?x foaf:name \"Pizza\" ."
-          + "      ?x <http://dbpedia.org/property/type> \"Sloppy giuseppe\" }"
-          + "    }" 
-          + " }";
-      
-    /*
-    try {
+        ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+        
+      for(String pizza:namedPizzas)
+      {
+    	  pizza = stripCapital(pizza);
+    	 
       queryStr = prologRdfs + NL + prologRdf + NL + "PREFIX foaf: <http://xmlns.com/foaf/0.1/>" + NL 
           + " SELECT ?label "
           + " WHERE { "
@@ -98,10 +84,10 @@ public class PizzaSearch {
           + "   SELECT ?pizza " 
           + "   WHERE {" 
           + "     ?pizza rdf:type <http://dbpedia.org/ontology/Food> ."
-          + "      ?pizza foaf:name \"Greek pizza\"@en ."
+          + "      ?pizza foaf:name \""+ pizza + "\"@en ."
           + "   }}"
-          + " }";  
-      */
+          + " }"  ;
+      
       query = QueryFactory.create(queryStr);
 
       // Remote execution.
@@ -112,8 +98,14 @@ public class PizzaSearch {
       rs = qexec.execSelect();
       ResultSetFormatter.out(System.out, rs, query);
       qexec.close();
+      
+      }
+      
+      
     }
-   
+    catch (Exception e) {
+        e.printStackTrace();
+      }
 
     // mostro il resultset come json o xml/rdf o html
   }
@@ -134,6 +126,24 @@ public class PizzaSearch {
   public static void addProperties(Resource res, Pizza pizza){
     //fillare la resource con i campi di pizza ricavati dalla query
   }
+  
+  public static String stripCapital(String str){
+	    for (int i = 1; i < str.length(); i++)
+	    {
+	    	if (!Character.isAlphabetic(str.charAt(i)))
+	    	{
+	    		i++;
+	    		continue;
+	    	}
+	    	if (Character.isUpperCase(str.charAt(i)))
+	    	{
+	    		str = str.substring(0, i) + " " + str.substring(i);
+	    		i++;
+	    	}
+	    }
+	    return str;
+	  }
+	  
   
   private class Pizza {
         
