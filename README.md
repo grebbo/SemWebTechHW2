@@ -29,6 +29,16 @@
 | <http://www.w3.org/2002/07/owl#Ontology>                           |
 ----------------------------------------------------------------------
 
+###ExampleDBPedia2
+
+---------------------------------------------------
+| name                                            |
+===================================================
+| <http://dbpedia.org/resource/Gardoqui>          |
+| <http://dbpedia.org/resource/Ricardo>           |
+| <http://dbpedia.org/resource/Milardo>           |
+| <http://dbpedia.org/resource/Chardonnay_(name)> |
+---------------------------------------------------
 
 ###ExQuerySelect1
 
