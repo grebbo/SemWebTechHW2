@@ -17,6 +17,10 @@ import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.query.ResultSetRewindable;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.ResIterator;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
@@ -80,38 +84,53 @@ public class Pizza2Person {
 		Model model = ModelFactory.createMemModelMaker().createDefaultModel();
 		model.read(in, null); // null base URI, since model URIs are absolute
 		in.close();
-		
+				
 		ArrayList<String> personIDs = new ArrayList<String>();
+
+		ResIterator resIt = model.listResourcesWithProperty(model.getProperty("http://xmlns.com/foaf/0.1/name"));
+		/*
+		for(;resIt.hasNext();){
+			System.out.println(resIt.next());
+		}
+		*/
 		
-		try {
-			queryStr = prologRdf + NL + "PREFIX foaf: <http://xmlns.com/foaf/0.1/> " + NL
-					+ " SELECT ?id "
-					+ " WHERE { "
-					+ " 	?id a foaf:Agent " 
-					+ " }";
-
-			query = QueryFactory.create(queryStr);
-			qexec = QueryExecutionFactory.create(query, model);
-
-			rs = ResultSetFactory.makeRewindable(qexec.execSelect());
-
-			rs.next();
-			while (rs.hasNext()) {
-				String t = rs.next().toString();
-				personIDs.add(t.substring(t.indexOf("=")+1, t.indexOf(")")).trim());
-			}
-			System.out.println(personIDs);
-			rs.reset();
-			//ResultSetFormatter.outputAsCSV(rs);
-			qexec.close();
-
-			System.out.println(model.createList(model.listResourcesWithProperty(model.getProperty("foaf:name"))));
+		Property likesPizza = ResourceFactory.createProperty("http://viardo.pizza/likes");
+		for(int i = 0 ; resIt.hasNext() ; i++){
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+			Resource persId = resIt.next();
+			model.add(model.createStatement(persId, likesPizza, namedPizzas.get(i)));
+			
+			System.out.println(model.createStatement(persId, likesPizza, namedPizzas.get(i)));
+			
 		}
 		
-		//model.add(giuseppe, likes, sloppy)
+		model.write(System.out, "RDF/XML");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
 
 	}
 }
